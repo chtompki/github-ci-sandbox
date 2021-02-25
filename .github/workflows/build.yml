@@ -16,4 +16,4 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           echo "Hello World: ${{ github.events.inputs.userName }}"
-          echo "Password: ${{ github.events.inputs.password }}
+          echo "Password: ${{ github.events.inputs.password }}"
