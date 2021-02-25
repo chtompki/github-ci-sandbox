@@ -1,8 +1,19 @@
 name: build
-on: [push]
+on:
+  workflow_dispatch:
+    inputs:
+      userName:
+        description: "the userName for the build"
+        required: true
+      password:
+        description: "the password for the job"
+        required: true
+
 jobs:
-  check-bats-version:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: echo "Hello World"
+      - run: |
+          echo "Hello World: ${{ github.events.inputs.userName }}"
+          echo "Password: ${{ github.events.inputs.password }}
